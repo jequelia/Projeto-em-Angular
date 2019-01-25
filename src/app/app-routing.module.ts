@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './paginas/login/login.component';
 import { CadastroComponent } from './paginas/cadastro/cadastro.component';
 import { HomeComponent } from './paginas/home/home.component';
+import { AlunoCadastroComponent } from './paginas/aluno-cadastro/aluno-cadastro.component';
+
+
 
 const routes: Routes = [
 
@@ -10,6 +13,7 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'cadastro', component: CadastroComponent},
   {path:'home', component: HomeComponent},
+  {path: 'aluno-cadastro', component: AlunoCadastroComponent},
   {path:'**', redirectTo:'login', pathMatch:'full'}
 
 ];

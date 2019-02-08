@@ -10,6 +10,10 @@ import { CadastroComponent } from './paginas/cadastro/cadastro.component';
 import { HomeComponent } from './paginas/home/home.component';
 
 import { AlunoCadastroComponent } from './paginas/aluno-cadastro/aluno-cadastro.component';
+import { TaskAddComponent } from './page-task/task-add/task-add.component';
+import { TaskListComponent } from './page-task/task-list/task-list.component';
+import { HomeTaskComponent } from './page-task/home-task/home-task.component';
+import{ HttpClientModule} from '@angular/common/HTTP';
 
 
 
@@ -20,6 +24,10 @@ import { AlunoCadastroComponent } from './paginas/aluno-cadastro/aluno-cadastro.
     CadastroComponent,
     HomeComponent,
     AlunoCadastroComponent,
+    TaskAddComponent,
+    TaskListComponent,
+    HomeTaskComponent,
+    
     
    
   ],
@@ -27,7 +35,8 @@ import { AlunoCadastroComponent } from './paginas/aluno-cadastro/aluno-cadastro.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

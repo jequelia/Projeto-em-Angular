@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
-import { CadastroService } from './cadastro.service';
+
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,9 +14,9 @@ import { CadastroService } from './cadastro.service';
 export class CadastroComponent implements OnInit {
 
   formCadastro: FormGroup;
-  cadastro = false;
+  
 
-  constructor(private fb: FormBuilder, private service: CadastroService) { }
+  constructor(private fb: FormBuilder, private service: AuthService, private router: Router) { }
 
 
   ngOnInit() {
@@ -31,17 +33,20 @@ export class CadastroComponent implements OnInit {
 
   }
 
-  // get f() { return this.formCadastro.controls; }
-
-
   cadastrarUSer() {
-   
-    this.cadastro = true;
+    
     if (this.formCadastro.valid) {
       this.service.addUser(this.formCadastro.getRawValue())
     
     }
     
   }
+
+  get isValid(): boolean{
+
+    return this.formCadastro.valid
+
+  }
+
 
 }

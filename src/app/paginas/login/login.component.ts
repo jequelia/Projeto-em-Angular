@@ -1,22 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent  {
+export class LoginComponent {
 
-  // nomeAtual: string 
-  // nomes: Array<string> = ['weskley', 'japa', 'andrew']
-
-  // constructor() { }
-
+  formLogin: FormGroup;
   
+  constructor(private auth: AuthService, private fb: FormBuilder) { }
 
-  // addName(){
+  ngOnInit() {
 
-  //   this.nomes.push(this.nomeAtual)
-  // }
+    this.formLogin = this.fb.group({
+
+      email: ['', [Validators.required, Validators.email]],
+      senha: ['', [Validators.required]]
+
+    });
+
+  }
+
+  login(){
+
+    this.auth.login(this.formLogin.getRawValue())
+  }
+
+
+
+
+
+
+
+
 
 }

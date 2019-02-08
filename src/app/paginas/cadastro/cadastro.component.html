@@ -33,7 +33,7 @@
                         placeholder="Senha">
                 </div>
 
-                <button  type="submit" class="btn btn-primary mb-2">Cadastrar!</button>
+                <button [disabled]='!isValid' type="submit" class="btn btn-primary mb-2">Cadastrar!</button>
 
         </form>
 

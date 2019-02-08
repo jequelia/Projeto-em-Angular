@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { WebService } from 'src/app/services/web.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http : WebService) { }
 
   ngOnInit() {
+
+    
   }
 
 }
